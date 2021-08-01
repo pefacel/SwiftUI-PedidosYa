@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "papa-jhon.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
