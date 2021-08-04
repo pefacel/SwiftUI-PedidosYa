@@ -58,19 +58,57 @@ struct ContentView: View {
   ]
   
   var body: some View {
-    NavigationView {
-      List(restaurantList) { restaurantItem in
-        NavigationLink(destination: DetailsView(restaurantItem: restaurantItem)) {
-          HStack {
-            RestaurantListView(restaurant: restaurantItem)
+    
+    VStack{
+        ScrollView(.horizontal){
 
+            LazyHStack{
+                Image("restaurants")
+                  .resizable()
+                  .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Image("botillerias")
+                  .resizable()
+                  .frame(width: 100, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            
+                Image("cafe")
+                  .resizable()
+                  .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Image("farmacias")
+                  .resizable()
+                  .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+                Image("mascotas")
+                  .resizable()
+                  .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                Image("mercados")
+                  .resizable()
+                  .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                Image("tiendas")
+                  .resizable()
+                  .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            }
 
-          }.padding(7)
+            
         }
-      }
-      .navigationBarTitle("Restaurantes")
+
+        NavigationView {
+          List(restaurantList) { restaurantItem in
+            NavigationLink(destination: DetailsView(restaurantItem: restaurantItem)) {
+              HStack {
+                RestaurantListView(restaurant: restaurantItem)
+
+
+              }.padding(7)
+            }
+          }
+          .navigationBarTitle("Restaurantes")
+        }
+        
     }
-  }
+    
+
+    }
 }
 
 struct DetailsView: View {
